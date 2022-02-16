@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: piet-executor
+  labels:
+    app: executor
+  namespace: nfpiet
+spec:
+  selector:
+    matchLabels:
+      app: executor
+  
+  template:
+    metadata:
+      labels:
+        app: executor
+    
+    spec:
+      containers:
+      - name: piet-executor
+  
+        image: registry.qtmsheep.com/vagahbond/nfpiet/frontend:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
