@@ -21,6 +21,8 @@ COPY ["package.json", "package-lock.json", "./"]
 
 RUN npm ci
 
+RUN npm install -g @nestjs/cli
+
 COPY . .
 
 EXPOSE 3000
