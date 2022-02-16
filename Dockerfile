@@ -17,11 +17,9 @@ WORKDIR /piet-executor
 
 ENV NODE_ENV=production
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package.json", "./"]
 
-RUN npm install -g @nestjs/cli
-
-RUN npm install --production
+RUN npm ci
 
 COPY . .
 
