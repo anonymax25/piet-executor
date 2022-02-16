@@ -19,7 +19,7 @@ spec:
       containers:
       - name: piet-executor
   
-        image: registry.qtmsheep.com/vagahbond/nfpiet/frontend:latest
+        image: natin56y/piet-executor:master
         imagePullPolicy: Always
         resources:
           limits:
